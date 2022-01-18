@@ -48,16 +48,4 @@ class ProvinceModel extends Model
         $builder = $this->db->table($this->table);
         $builder->delete([$this->primaryKey => $id]);
     }
-
-    /**
-     * search index
-     * @return array
-     */
-    public function search_prov($province)
-    {
-        $builder = $this->db->table($this->table);
-        $builder->select('*')
-            ->where('province_name', $province)
-            ->get()->getResult();
-    }
 }
