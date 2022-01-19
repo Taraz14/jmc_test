@@ -33,31 +33,39 @@
             </form>
         </div>
         <div class="container mt-5">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Nomor</th>
-                        <th>Kabupaten</th>
-                        <th>Provinsi</th>
-                        <th>Jumlah Penduduk</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $i = 1;
-                    foreach ($kabupaten as $value) : ?>
+            <form action="/print-all" method="post" accept-charset="utf-8">
+                <div class="col col-lg-12 mb-5">
+                    <input type="submit" class="btn btn-warning" value="Print Semua">
+                </div>
+                <table class="table table-bordered table-striped">
+                    <thead>
                         <tr>
-                            <td><?= $i++ ?></td>
-                            <td><?= $value->kabupaten_name ?></td>
-                            <td><?= $value->province_name ?></td>
-                            <td><?= $value->jumlah_penduduk ?></td>
-                            <td><a href="#" class="btn btn-info btn-sm text-white">Print</a></td>
+                            <th>Nomor</th>
+                            <th>Kabupaten</th>
+                            <th>Provinsi</th>
+                            <th>Jumlah Penduduk/kabupaten</th>
+
                         </tr>
-                    <?php
-                    endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $i = 0;
+                        foreach ($kabupaten as $value) : ?>
+                            <input type="hidden" name="nmr[]" value="<?= $i++ ?>">
+                            <input type="hidden" name="kab_name[]" value="<?= $value->kabupaten_name ?>">
+                            <input type="hidden" name="province_name[]" value="<?= $value->province_name ?>">
+                            <input type="hidden" name="jml_penduduk[]" value="<?= $value->jumlah_penduduk ?>">
+                            <tr>
+                                <td><?= $i ?></td>
+                                <td><?= $value->kabupaten_name ?></td>
+                                <td><?= $value->province_name ?></td>
+                                <td><?= $value->jumlah_penduduk ?></td>
+                            </tr>
+                        <?php
+                        endforeach; ?>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 </body>

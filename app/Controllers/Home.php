@@ -51,4 +51,21 @@ class Home extends BaseController
 
         return view('home', $data);
     }
+
+    /**
+     * Print All
+     * @return array
+     */
+    public function print_all()
+    {
+        $get = $this->request->getVar();
+
+        $data = [
+            'nmr' => $get['nmr'],
+            'kab_name' => $get['kab_name'],
+            'province_name' => $get['province_name'],
+            'jml_penduduk' => $get['jml_penduduk']
+        ];
+        return view('print', $data);
+    }
 }

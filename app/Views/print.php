@@ -39,23 +39,22 @@
                         <th>Nomor</th>
                         <th>Kabupaten</th>
                         <th>Provinsi</th>
-                        <th>Jumlah Penduduk</th>
-                        <th>Aksi</th>
+                        <th>Jumlah Penduduk/kabupaten</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    $i = 1;
-                    foreach ($kabupaten as $value) : ?>
+                    <?php foreach ($nmr as $key => $val) : ?>
                         <tr>
-                            <td><?= $i++ ?></td>
-                            <td><?= $value->kabupaten_name ?></td>
-                            <td><?= $value->province_name ?></td>
-                            <td><?= $value->jumlah_penduduk ?></td>
-                            <td><a href="#" class="btn btn-info btn-sm text-white">Print</a></td>
+                            <td><?= $nmr[$key] + 1 ?></td>
+                            <td><?= $kab_name[$key] ?></td>
+                            <td><?= $province_name[$key] ?></td>
+                            <td><?= $jml_penduduk[$key] ?></td>
                         </tr>
-                    <?php
-                    endforeach; ?>
+                    <?php endforeach; ?>
+                    <tr>
+                        <th colspan="3" class="text-center">Jumlah Penduduk Keseluruhan</th>
+                        <td><?= array_sum($jml_penduduk) ?></td>
+                    </tr>
                 </tbody>
             </table>
         </div>

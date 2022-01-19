@@ -48,6 +48,9 @@ $routes->post('/kb/update/(:any)', 'KabupatenController::update/$1');
 //search prov
 $routes->post('/search-prov', 'Home::search_by_province');
 
+//print
+$routes->post('/print-all', 'Home::print_all');
+
 
 
 /*
