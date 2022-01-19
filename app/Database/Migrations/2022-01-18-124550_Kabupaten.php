@@ -38,7 +38,7 @@ class Kabupaten extends Migration
 
         $this->forge->addKey('kabupaten_id', TRUE);
         $this->forge->addKey(['province_id', 'kabupaten_name']);
-        $this->forge->addForeignKey('province_id', 'jmc_province', 'province_id', 'NO ACTION', 'CASCADE');
+        $this->forge->addForeignKey('province_id', 'province', 'province_id', 'NO ACTION', 'CASCADE');
         $this->forge->createTable('kabupaten', TRUE);
         $this->db->enableForeignKeyChecks();
     }

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ProvinceModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'jmc_province';
+    protected $table            = 'province';
     protected $primaryKey       = 'province_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class KabupatenModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'jmc_kabupaten';
+    protected $table            = 'kabupaten';
     protected $primaryKey       = 'province_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -34,7 +34,7 @@ class KabupatenModel extends Model
     {
         $builder = $this->db->table($this->table . ' k');
         $builder->select('*, k.province_id as kpid, p.province_id as pid');
-        $builder->join('jmc_province p', 'k.province_id = p.province_id');
+        $builder->join('province p', 'k.province_id = p.province_id');
         return $builder->get()->getResult();
     }
 
@@ -66,7 +66,7 @@ class KabupatenModel extends Model
     {
         $builder = $this->db->table($this->table . ' k');
         $builder->select('*')
-            ->join('jmc_province p', 'k.province_id = p.province_id');
+            ->join('province p', 'k.province_id = p.province_id');
         if ($province != NULL) {
             $builder->where('province_name', $province);
         } else if ($kabupaten != NULL) {
