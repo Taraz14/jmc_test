@@ -7,6 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/bootstrap/css/bootstrap.min.css">
     <title>Wilayah</title>
+    <style>
+        @media print {
+            .noPrint {
+                display: none;
+            }
+        }
+
+        h1 {
+            color: #f6f6;
+        }
+    </style>
 </head>
 
 <body class="">
@@ -14,7 +25,7 @@
         <div class=" text-center mt-5">
             <h2>Data Wilayah</h2>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5 noPrint">
             <form action="/search-prov" method="post" accept-charset="utf-8">
                 <div class="row">
                     <div class="col col-lg-4">
@@ -62,5 +73,8 @@
 </body>
 
 <script src="<?= base_url() ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    window.print();
+</script>
 
 </html>

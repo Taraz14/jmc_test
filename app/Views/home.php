@@ -35,7 +35,7 @@
         <div class="container mt-5">
             <form action="/print-all" method="post" accept-charset="utf-8">
                 <div class="col col-lg-12 mb-5">
-                    <input type="submit" class="btn btn-warning" value="Print Semua">
+                    <button type="submit" class="btn btn-warning" formtarget="_blank">Print Semua</button>
                 </div>
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -71,5 +71,7 @@
 </body>
 
 <script src="<?= base_url() ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
 
 </html>
